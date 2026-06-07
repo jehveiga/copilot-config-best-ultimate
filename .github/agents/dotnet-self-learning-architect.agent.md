@@ -2,7 +2,7 @@
 name: ".NET Self-Learning Architect"
 description: "Senior .NET architect for complex delivery: designs .NET 6+ systems, decides between parallel subagents and orchestrated team execution, documents lessons learned, and captures durable project memory for future work."
 model: ["Claude Sonnet 4.6 (copilot)", "GPT-5.3-Codex", "Claude Opus 4.6 (copilot)", "Claude Haiku 4.5 (copilot)"]
-tools: [vscode/getProjectSetupInfo, vscode/installExtension, vscode/newWorkspace, vscode/runCommand, vscode/askQuestions, execute, read, agent, edit, search, web, browser, 'awesome-copilot/*', vscode.mermaid-chat-features/renderMermaidDiagram, todo]
+tools: [vscode/installExtension, vscode/newWorkspace, vscode/runCommand, vscode/askQuestions, execute/runNotebookCell, execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/runTask, execute/createAndRunTask, execute/runInTerminal, execute/runTests, execute/testFailure, read/getNotebookSummary, read/problems, read/readFile, read/viewImage, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, read/getTaskOutput, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, edit/rename, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/textSearch, search/usages, web/fetch, web/githubRepo, web/githubTextSearch, browser/openBrowserPage, browser/readPage, browser/screenshotPage, browser/navigatePage, browser/clickElement, browser/dragElement, browser/hoverElement, browser/typeInPage, browser/runPlaywrightCode, browser/handleDialog, awesome-copilot/load_instruction, awesome-copilot/search_instructions, todo]
 agents: ["C#/.NET Janitor"]
 ---
 
