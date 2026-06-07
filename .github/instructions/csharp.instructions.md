@@ -100,6 +100,8 @@ applyTo: '**/*.cs'
 
 - Guide users on implementing caching strategies (in-memory, distributed, response caching).
 - Explain asynchronous programming patterns and why they matter for API performance.
+  - Always use `ConfigureAwait(false)` in library code to avoid deadlocks: `await SomeAsyncMethod().ConfigureAwait(false)`.
+  - Never use `.Result`, `.Wait()`, or `.GetAwaiter().GetResult()` — sync-over-async causes deadlocks and poor performance.
 - Demonstrate pagination, filtering, and sorting for large data sets.
 - Show how to implement compression and other performance optimizations.
 - Explain how to measure and benchmark API performance.

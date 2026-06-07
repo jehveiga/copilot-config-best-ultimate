@@ -9,14 +9,17 @@ A curated set of GitHub Copilot customization files for .NET/C# backend developm
 | Agent | Purpose |
 |-------|---------|
 | **.NET Self-Learning Architect** | Principal-level .NET architect that designs systems with right-sized architecture (minimalist → Clean Architecture), orchestrates subagents, and maintains a self-learning system with lessons and memories across sessions. |
-| **C#/.NET Janitor** | Code cleanup, modernization, and tech debt remediation — applies latest C# features, fixes warnings, optimizes performance, and ensures test coverage. |
-
+| **C#/.NET Janitor** | Code cleanup, modernization, and tech debt remediation — applies latest C# features, fixes warnings, optimizes performance, and ensures test coverage. || **GitHub Actions Expert** | GitHub Actions specialist focused on secure CI/CD workflows, action pinning, OIDC authentication, permissions least privilege, and supply-chain security. |
+| **WinForms Expert** | Support development of .NET (OOP) WinForms Designer compatible apps, including MVVM binding, dark mode, and Windows API projections. |
 ### Instructions
 
 | File | Scope | Purpose |
 |------|-------|---------|
 | `csharp.instructions.md` | `**/*.cs` | Coding style, naming conventions, project structure, and C# 14 best practices. |
+| `dotnet-framework.instructions.md` | `**/*.csproj`, `**/*.cs` | Guidance for .NET Framework projects: legacy vs SDK-style project structure, MSBuild usage, NuGet management, and C# language version constraints. |
 | `dotnet-upgrade.instructions.md` | On-demand | Step-by-step guidance for .NET framework version upgrades with progressive tracking. |
+| `agents.instructions.md` | `**/*.agent.md` | Guidelines for creating and maintaining custom agent files for GitHub Copilot, including required frontmatter and naming conventions. |
+| `agent-skills.instructions.md` | `**/skills/**/SKILL.md` | Guidelines for creating high-quality, portable Agent Skills with bundled resources and on-demand activation. |
 
 ### Skills
 
@@ -49,6 +52,8 @@ A curated set of GitHub Copilot customization files for .NET/C# backend developm
 
 - Use `@.NET Self-Learning Architect` for architecture decisions, feature implementation, and complex delivery.
 - Use `@C#/.NET Janitor` for code cleanup, modernization, and quality sweeps.
+- Use `@GitHub Actions Expert` for CI/CD pipeline design, security hardening, and workflow optimization.
+- Use `@WinForms Expert` for .NET WinForms application development with Designer compatibility.
 
 ## Requirements
 

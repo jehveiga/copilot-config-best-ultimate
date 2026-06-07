@@ -5,6 +5,11 @@ applyTo: '**/*.csproj, **/*.cs'
 
 # .NET Framework Development
 
+> **Override notice**: This file overrides `csharp.instructions.md` for the following areas when working on .NET Framework projects:
+> - **C# version**: Use C# 7.3 only — ignore any guidance about C# 8+ features (switch expressions, nullable reference types, using declarations, init-only properties, records, file-scoped namespaces, global usings, pattern matching enhancements, target-typed `new`).
+> - **Nullable reference types**: Do not use `string?`, `#nullable enable`, or any NRT annotations.
+> - **Formatting**: Do not use file-scoped namespaces or switch expressions — use traditional namespace blocks and switch statements instead.
+
 ## Build and Compilation Requirements
 - Always use `msbuild /t:rebuild` to build the solution or projects instead of `dotnet build`
 
@@ -77,13 +82,6 @@ Many .NET Framework projects use the legacy non-SDK project format, which differ
 
 ## Common .NET Framework Pitfalls and Best Practices
 
-### Async/Await Patterns
-- **ConfigureAwait(false)**: Always use `ConfigureAwait(false)` in library code to avoid deadlocks:
-  ```csharp
-  var result = await SomeAsyncMethod().ConfigureAwait(false);
-  ```
-- **Avoid sync-over-async**: Don't use `.Result` or `.Wait()` or `.GetAwaiter().GetResult()`. These sync-over-async patterns can lead to deadlocks and poor performance. Always use `await` for asynchronous calls.
-
 ### DateTime Handling
 - **Use DateTimeOffset for timestamps**: Prefer `DateTimeOffset` over `DateTime` for absolute time points
 - **Specify DateTimeKind**: When using `DateTime`, always specify `DateTimeKind.Utc` or `DateTimeKind.Local`
@@ -105,11 +103,6 @@ Many .NET Framework projects use the legacy non-SDK project format, which differ
 - **Use ConfigurationManager**: Access app settings through `ConfigurationManager.AppSettings`
 - **Connection strings**: Store in `<connectionStrings>` section, not `<appSettings>`
 - **Transformations**: Use web.config/app.config transformations for environment-specific settings
-
-### Exception Handling
-- **Specific exceptions**: Catch specific exception types, not generic `Exception`
-- **Don't swallow exceptions**: Always log or re-throw exceptions appropriately
-- **Use using for disposable resources**: Ensures proper cleanup even when exceptions occur
 
 ### Performance Considerations
 - **Avoid boxing**: Be aware of boxing/unboxing with value types and generics
